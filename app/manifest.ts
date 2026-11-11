@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Focus Doubler",
-    short_name: "Focus Doubler",
+    name: "Mini Deadlines",
+    short_name: "Mini Deadlines",
     description:
       "Sesje skupienia z regularnymi check-inami. Dane zostają na Twoim urządzeniu.",
     lang: "pl",

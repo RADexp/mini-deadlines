@@ -17,13 +17,13 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Focus Doubler",
+  title: "Mini Deadlines",
   description:
     "Sesje skupienia z regularnymi check-inami. Dane zostają na Twoim urządzeniu.",
-  applicationName: "Focus Doubler",
+  applicationName: "Mini Deadlines",
   appleWebApp: {
     capable: true,
-    title: "Focus Doubler",
+    title: "Mini Deadlines",
     statusBarStyle: "black-translucent",
   },
   icons: { apple: "/apple-touch-icon.png" },

@@ -1,4 +1,4 @@
-# Focus Doubler
+# Mini Deadlines
 
 Sesje skupienia z regularnymi check-inami. Aplikacja Next.js (App Router) w całości
 statyczna — **wszystkie dane zostają w `localStorage` przeglądarki**, nie ma backendu,
@@ -43,7 +43,7 @@ po dodaniu aplikacji do ekranu głównego (iOS 16.4+) — w zwykłym Safari nie 
 ## Instalacja jako aplikacja
 
 - **Desktop (Chrome/Edge)** — ikona instalacji w pasku adresu albo menu → „Zainstaluj
-  Focus Doubler". Dostajesz osobne okno bez paska przeglądarki, można je zmniejszyć
+  Mini Deadlines". Dostajesz osobne okno bez paska przeglądarki, można je zmniejszyć
   do wąskiego paska z timerem; layout schodzi wtedy w tryb kompaktowy.
 - **iPhone (Safari)** — Udostępnij → „Dodaj do ekranu początkowego".
 - **Android (Chrome)** — menu → „Zainstaluj aplikację".

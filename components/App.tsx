@@ -350,11 +350,11 @@ export default function App() {
   // ---------- tytuł karty ----------
   useEffect(() => {
     if (phase === "session" && live) {
-      document.title = `${fmt(live.remainingSec)} · Focus Doubler`;
+      document.title = `${fmt(live.remainingSec)} · Mini Deadlines`;
     } else if (phase === "break" && brk && !brk.finished) {
       document.title = `${fmt(brk.leftSec)} · Przerwa`;
     } else {
-      document.title = "Focus Doubler";
+      document.title = "Mini Deadlines";
     }
   }, [phase, live?.remainingSec, live, brk]);
 
@@ -770,7 +770,7 @@ export default function App() {
     <div className="app">
       <div className="brand">
         <span className={`dot${dotPulsing ? " pulse" : ""}`} />
-        <span>System</span> <b>Focus&nbsp;Doubler</b>
+        <span>System</span> <b>Mini&nbsp;Deadlines</b>
         <div className="brand-tools">
           <button
             className={`sound-toggle${notifyEnabled ? "" : " off"}`}
@@ -909,7 +909,7 @@ export default function App() {
         />
       )}
 
-      <footer className="app-version">Focus Doubler v{APP_VERSION}</footer>
+      <footer className="app-version">Mini Deadlines v{APP_VERSION}</footer>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-/* Focus Doubler — offline cache + obsługa kliknięcia w powiadomienie. */
+/* Mini Deadlines — offline cache + obsługa kliknięcia w powiadomienie. */
 const CACHE = "focus-doubler-v1";
 
 self.addEventListener("install", () => {

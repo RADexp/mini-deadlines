@@ -124,7 +124,7 @@ export default function History({
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `focus-doubler-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `mini-deadlines-${new Date().toISOString().slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(url);
   }
