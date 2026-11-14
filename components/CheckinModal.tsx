@@ -5,9 +5,13 @@ import type { CheckinEntry, Rating } from "@/lib/types";
 import RateIcon from "./RateIcon";
 import { nowHM } from "@/lib/time";
 
+/** Co ile ponawiać dźwięk, dopóki check-in czeka na ocenę. */
+const REMIND_INTERVAL_MS = 60_000;
+
 export default function CheckinModal({
   final = false,
   earlyEnd = false,
+  onRemind,
   onSave,
   onAbort,
 }: {
@@ -15,6 +19,8 @@ export default function CheckinModal({
   final?: boolean;
   /** Ręczne, wcześniejsze zakończenie — nieoceniony odcinek dobiegł >50% interwału. */
   earlyEnd?: boolean;
+  /** Wołane co minutę, dopóki użytkownik nie wybierze oceny. */
+  onRemind?: () => void;
   onSave: (entry: CheckinEntry) => void;
   onAbort: () => void;
 }) {
@@ -27,6 +33,17 @@ export default function CheckinModal({
   useEffect(() => {
     firstField.current?.focus();
   }, []);
+
+  // Przypomnienie dźwiękiem co minutę, aż padnie ocena — łatwo przeoczyć
+  // pierwszy sygnał w głębokim skupieniu. Ręczne zakończenie nie przypomina.
+  const remindRef = useRef(onRemind);
+  remindRef.current = onRemind;
+  const shouldRemind = !earlyEnd && !rating;
+  useEffect(() => {
+    if (!shouldRemind) return;
+    const id = window.setInterval(() => remindRef.current?.(), REMIND_INTERVAL_MS);
+    return () => window.clearInterval(id);
+  }, [shouldRemind]);
 
   function save() {
     if (!rating) return;

@@ -904,6 +904,9 @@ export default function App() {
         <CheckinModal
           final={live.finalCheckin}
           earlyEnd={live.earlyEnd}
+          onRemind={() => {
+            if (soundRef.current) playChimeCheckin();
+          }}
           onSave={saveCheckin}
           onAbort={abortFromCheckin}
         />
